@@ -1,0 +1,60 @@
+{
+  "routine": [
+    {
+      "id": "3",
+      "name": "Some By Mi AHA BHA PHA 30 Days Miracle Toner",
+      "type": "Toner",
+      "purpose": "Exfoliate and balance skin",
+      "am": null
+    },
+    {
+      "id": "4",
+      "name": "Klairs Supple Preparation Unscented Toner",
+      "type": "Toner",
+      "purpose": "Hydrate and prep skin",
+      "am": true
+    },
+    {
+      "id": "5",
+      "name": "Missha Time Revolution The First Treatment Essence",
+      "type": "Essence",
+      "purpose": "Hydrate and improve skin texture",
+      "am": null
+    },
+    {
+      "id": "6",
+      "name": "COSRX Advanced Snail 96 Mucin Power Essence",
+      "type": "Essence",
+      "purpose": "Repair and hydrate skin",
+      "am": null
+    },
+    {
+      "id": "7",
+      "name": "Mizon Snail Repair Intensive Ampoule",
+      "type": "Serum",
+      "purpose": "Repair and brighten skin",
+      "am": null
+    },
+    {
+      "id": "8",
+      "name": "Innisfree Green Tea Seed Serum",
+      "type": "Serum",
+      "purpose": "Hydrate and protect skin",
+      "am": null
+    },
+    {
+      "id": "9",
+      "name": "Benton Aloe Propolis Soothing Gel",
+      "type": "Moisturizer",
+      "purpose": "Soothing and moisturizing",
+      "am": true
+    },
+    {
+      "id": "10",
+      "name": "Etude House SoonJung 2x Barrier Intensive Cream",
+      "type": "Moisturizer",
+      "purpose": "Moisturize and strengthen skin barrier",
+      "am": false
+    }
+  ]
+}
