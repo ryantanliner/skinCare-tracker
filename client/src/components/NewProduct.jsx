@@ -35,7 +35,7 @@ const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange
           <option value="Both">Both</option>
         </select>
       </div>
-      <div class="container py-5 px-5 mx-0 min-w-full flex flex-col items-center">
+      <div className="container py-5 px-5 mx-0 min-w-full flex flex-col items-center">
         <button type="submit" className="w-50 p-2 bg-green-600 rounded">Add Product</button>
       </div>
     </form>
