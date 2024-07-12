@@ -1,31 +1,16 @@
 import React from 'react';
 
-const ShowRoutine = ({ routine, showAm, setShowAm, removeProduct }) => {
+const ShowRoutine = ({ routine, removeProduct }) => {
   return (
     <>
-      <button
-        onClick={() => setShowAm(!showAm)}
-        className="bg-teal-500 text-white py-2 px-6 rounded-lg mb-6 hover:bg-teal-700 transition"
-      >
-        Show {showAm ? 'Night' : 'Morning'} Routine
-      </button>
       {routine.map((product) => (
-        <li
-          key={product.id}
-          className="bg-gray-100 p-4 rounded-lg shadow-md flex justify-between items-center"
-        >
-          <div>
-            <span className="block font-semibold text-lg text-purple-600">{product.name}</span>
-            <span className="block text-gray-700">Type: {product.type}</span>
-            <span className="block text-gray-700">Purpose: {product.purpose}</span>
-          </div>
-          <button
-            className="bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-700 transition"
-            onClick={() => removeProduct(product.id)}
-          >
-            Remove
-          </button>
-        </li>
+        <div key={product.id} className="bg-gray-800 p-4 rounded">
+          <h2 className="text-xl font-bold mb-2">{product.name}</h2>
+          <p className="mb-2"><strong>Type:</strong> {product.type}</p>
+          <p className="mb-2"><strong>Purpose:</strong> {product.purpose}</p>
+          <p className="mb-4"><strong>Time:</strong> {product.am === null ? 'Both' : product.am ? 'Morning' : 'Night'}</p>
+          <button onClick={() => removeProduct(product.id)} className="px-4 py-2 bg-red-600 rounded">Remove</button>
+        </div>
       ))}
     </>
   );
