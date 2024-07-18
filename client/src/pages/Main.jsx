@@ -35,7 +35,6 @@ export default function Main() {
       type: type,
       purpose: purpose,
       am: time(am),
-      id: (routine.length + 1).toString()
     };
 
     routineService.create(productObj).then(products => {
