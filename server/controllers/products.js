@@ -1,6 +1,15 @@
 const routineRouter = require('express').Router()
 const Product = require('../models/product')
 const User = require('../models/user')
+const jwt = require('jsonwebtoken')
+
+const getTokenFrom = request => {
+  const authorization = request.get('authorization')
+  if (authorization && authorization.startsWith('Bearer ')) {
+    return authorization.replace('Bearer ', '')
+  }
+  return null
+}
 
 routineRouter.get('/', async (request, response) => {
   const products = await Product.find({}).populate('user', {username: 1, name: 1})
@@ -10,7 +19,13 @@ routineRouter.get('/', async (request, response) => {
 routineRouter.post('/', async (request, response,) => {
   const body = request.body
 
-  const user = await User.findById(body.userId)
+  const decodedToken = jwt.verify(getTokenFrom(request), process.env.SECRET)
+  if (!decodedToken.id) {
+    return response.status(401).json({ 
+      error: 'token invalid'
+    })
+  }
+  const user = await User.findById(decodedToken.id)
 
   const product = new Product({
     name: body.name,
