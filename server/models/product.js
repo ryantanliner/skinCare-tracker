@@ -14,7 +14,11 @@ const productSchema = new mongoose.Schema({
     type: String, 
     required: true
   },
-  am: Boolean
+  am: Boolean,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
 productSchema.set('toJSON', {

@@ -4,10 +4,12 @@ require('express-async-errors')
 const app = express()
 const cors = require('cors')
 const RoutineRouter = require('./controllers/products')
+const usersRouter = require('./controllers/users')
 const middleware = require('./utils/middleware')
 const loggers = require('./utils/loggers')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
+
 
 mongoose.set('strictQuery', false)
 
@@ -28,6 +30,7 @@ app.use(express.json())
 app.use(morgan('tiny'))
 
 app.use('/api/routine', RoutineRouter)
+app.use('/api/users', usersRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
