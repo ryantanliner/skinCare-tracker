@@ -10,18 +10,6 @@ routineRouter.get('/', async (request, response) => {
 routineRouter.post('/', async (request, response,) => {
   const body = request.body
 
-  // let morn = true
-  // if (body.am == "Night") {
-  //   morn = false
-  // }
-  // else if (body.am == "Both") {
-  //   morn = null
-  // }
-
-  // console.log(body.am)
-  
-
-
   const product = new Product({
     name: body.name,
     type: body.type,

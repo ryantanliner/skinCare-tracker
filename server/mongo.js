@@ -1,12 +1,7 @@
 const mongoose = require('mongoose')
 
-// if (process.argv.length < 3) {
-//   console.log('give password as argument')
-//   process.exit(1)
-// }
 
-
-const url = `mongodb+srv://ryantanliner:z6CD7l4AuZx7Qb2C
+const url = `mongodb+srv://ryantanliner:a6CD7l4AuZx7Qb2C
 @products.elpmudf.mongodb.net/skincareRoutine?retryWrites=true&w=majority&appName=products`
 
 mongoose.set('strictQuery', false)
