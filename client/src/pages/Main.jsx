@@ -63,12 +63,12 @@ export default function Main() {
   };
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
-      <div className="flex-none w-64 p-4 bg-gray-800 ">
-        <div className="text-center mb-8f ixed top-0 left-0 right-0 ">
+      <div className="flex-none w-64 p-4 bg-gray-800 h-screen fixed">
+        <div className="text-center mb-8">
           <img src="profile.jpg" alt="Profile" className="w-24 h-24 mx-auto rounded-full" />
-          <h2 className="mt-4 text-xl font-semibold ">Ryan Tan</h2>
+          <h2 className="mt-4 text-xl font-semibold">Ryan Tan</h2>
         </div>
-        <nav >
+        <nav>
           <ul>
             <li className="mb-4"><a href="#" className="flex items-center px-4 py-2 rounded hover:bg-gray-700"><span>Tracker</span></a></li>
             <li className="mb-4"><a href="#" className="flex items-center px-4 py-2 rounded hover:bg-gray-700"><span>Profile</span></a></li>
@@ -76,7 +76,7 @@ export default function Main() {
           </ul>
         </nav>
       </div>
-      <div className="flex-grow p-8">
+      <div className="flex-grow p-8 ml-64">
         <h1 className="text-3xl font-bold mb-8">Skincare Routine</h1>
         <NewProduct
           addProduct={addProduct}
