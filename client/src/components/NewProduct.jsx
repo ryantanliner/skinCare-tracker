@@ -1,6 +1,11 @@
 import React from 'react';
 
 const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange, purpose, handlePurposeChange, am, handleAmChange }) => {
+
+  let arr = ["Morning", "Night", "Both"]
+
+
+
   return (
     <form onSubmit={addProduct} className="bg-gray-800 p-4 rounded mb-8">
       <div className="mb-4">
@@ -30,9 +35,12 @@ const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange
       <div className="mb-4">
         <label className="block mb-2">Morning/Night/Both</label>
         <select value={am} onChange={handleAmChange} className="w-full p-2 bg-gray-700 rounded">
-          <option value="Morning">Morning</option>
+          {arr.map((time) => (
+            <option key={time} value={time}>{time}</option>
+          ))}
+          {/* <option value="Morning">Morning</option>
           <option value="Night">Night</option>
-          <option value="Both">Both</option>
+          <option value="Both">Both</option> */}
         </select>
       </div>
       <div className="container py-5 px-5 mx-0 min-w-full flex flex-col items-center">
