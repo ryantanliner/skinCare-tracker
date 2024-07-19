@@ -1,17 +1,37 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import loginService from '../services/login';
+import routineService from '../services/routines'
 
-export default function Login() {
+function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault()
-    console.log(username, password)
-    // navigate('/main');
-  };
+
+    try{
+       const user = await loginService.login({
+        username, password
+      })
+      window.localStorage.setItem(
+        'loggedUser', JSON.stringify(user)
+      ) 
+      routineService.setToken(user.token)
+      setUsername('')
+      setPassword('')
+      navigate('/main')
+    } catch (exception) {
+      console.log('wrong')
+      setError('incorrect username/password')
+      setTimeout(() => {
+        setError(null)
+      }, 5000)
+    }
+  }
   return (
 
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
@@ -19,6 +39,7 @@ export default function Login() {
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800">Welcome To SkincareTracker!</h2>
           <p className="text-gray-600">Login</p>
+          <h3>{error}</h3>
         </div>
         <form onSubmit={handleLogin}>
           <div className="mb-4 block text-gray-700 text-sm mb-2" htmlFor="username">
@@ -59,6 +80,8 @@ export default function Login() {
 
   );
 }
+
+export default Login
 
 
 {/* <div className="flex items-center justify-between mb-4">
