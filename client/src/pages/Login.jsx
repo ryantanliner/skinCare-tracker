@@ -10,6 +10,10 @@ function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
+  const handleSingUp = () => {
+    navigate('/signup')
+  }
+
   const handleLogin = async (event) => {
     event.preventDefault()
 
@@ -77,7 +81,6 @@ function Login() {
         </div>
       </div>
     </div>
-
   );
 }
 
