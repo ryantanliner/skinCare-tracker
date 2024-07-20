@@ -4,6 +4,7 @@ import ShowRoutine from '../components/ShowRoutine';
 import { useState, useEffect } from 'react';
 import routineService from '../services/routines';
 import Navbar from '../components/Navbar'
+
 const time = function (dur) {
   if (dur === "Both") {
     return null;
@@ -69,10 +70,10 @@ export default function Main() {
   const userRoutine = routine.filter(a => a.user.username === loggedInUser.username)
   const routineToShow = showAm ? userRoutine.filter(produc => produc.am !== false) : userRoutine.filter(produc => produc.am !== true);
 
-
+  console.log(loggedInUser)
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
-      <Navbar loggedInUser={loggedInUser.username}/>
+      <Navbar username={loggedInUser.name}/>
       <div className="flex-grow p-8 ml-64">
         <h1 className="text-3xl font-bold mb-8">Skincare Routine</h1>
         <NewProduct

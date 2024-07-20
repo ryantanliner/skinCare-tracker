@@ -2,7 +2,6 @@ export default function Navbar({username}) {
   return(
     <div className="flex-none w-64 p-4 bg-gray-800 h-screen fixed">
       <div className="text-center mb-8">
-        <img src="profile.jpg" alt="Profile" className="w-24 h-24 mx-auto rounded-full" />
         <h2 className="mt-4 text-xl font-semibold">{username}</h2>
       </div>
       <nav>

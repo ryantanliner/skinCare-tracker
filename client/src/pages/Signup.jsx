@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import usersService from '../services/users'
 import { useNavigate } from 'react-router-dom'
+import usersService from '../services/users'
+import loginService from '../services/login'
+import routineService from '../services/routines'
 
 export default function Singup(){
   const [newUsername, setNewUsername] = useState('')
@@ -18,6 +20,15 @@ export default function Singup(){
         password: newPassword
       }
       usersService.signup(newUser)
+      // const signInUser = {
+      //   username: newUsername,
+      //   password: newPassword
+      // }
+      // loginService.login(signInUser)
+      // window.localStorage.setItem(
+      //   'loggedUser', JSON.stringify(signInUser)
+      // )
+      // routineService.setToken(signInUser.token)
       setNewUsername('')
       setNewName('')
       setNewPassword('')
