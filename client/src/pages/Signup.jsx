@@ -23,7 +23,6 @@ export default function Singup(){
       setNewPassword('')
       navigate('/')
     } catch (exception) {
-      console.log('fuck this shit ')
       console.log(exception)
     }
   }
