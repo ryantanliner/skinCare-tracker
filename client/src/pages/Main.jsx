@@ -75,7 +75,7 @@ export default function Main() {
     <div className="flex min-h-screen bg-gray-900 text-white">
       <Navbar username={loggedInUser.name}/>
       <div className="flex-grow p-8 ml-64">
-        <h1 className="text-3xl font-bold mb-8">Skincare Routine</h1>
+        <h1 className="text-5xl font-bold mb-8 zain-extrabold ">Skincare Routine</h1>
         <NewProduct
           addProduct={addProduct}
           name={name} handleNameChange={(e) => setName(e.target.value)}
@@ -84,7 +84,7 @@ export default function Main() {
           am={am} handleAmChange={(e) => setAm(e.target.value)}
         />
         <div className="mt-8">
-          <button onClick={() => setShowAm(!showAm)} className="px-4 py-2 bg-green-600 rounded mb-4">
+          <button onClick={() => setShowAm(!showAm)} className="px-4 py-2 bg-blue-600 rounded mb-4 zain-regular text-xl">
             Show {showAm ? 'Night' : 'Morning'} Routine
           </button>
           <div className="flex flex-col gap-4">

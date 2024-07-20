@@ -4,8 +4,6 @@ const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange
 
   let arr = ["Morning", "Night", "Both"]
 
-
-
   return (
     <form onSubmit={addProduct} className="bg-gray-800 p-4 rounded mb-8">
       <div className="mb-4">
@@ -13,7 +11,7 @@ const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange
           value={name}
           onChange={handleNameChange}
           placeholder="Product Name"
-          className="w-full p-2 bg-gray-700 rounded"
+          className="w-full p-2 bg-gray-700 rounded text-xl zain-regular"
         />
       </div>
       <div className="mb-4">
@@ -21,7 +19,7 @@ const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange
           value={type}
           onChange={handleTypeChange}
           placeholder="Product Type"
-          className="w-full p-2 bg-gray-700 rounded"
+          className="w-full p-2 bg-gray-700 rounded text-xl zain-regular"
         />
       </div>
       <div className="mb-4">
@@ -29,12 +27,12 @@ const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange
           value={purpose}
           onChange={handlePurposeChange}
           placeholder="Product Purpose"
-          className="w-full p-2 bg-gray-700 rounded"
+          className="w-full p-2 bg-gray-700 rounded text-xl zain-regular"
         />
       </div>
       <div className="mb-4">
-        <label className="block mb-2">Morning/Night/Both</label>
-        <select value={am} onChange={handleAmChange} className="w-full p-2 bg-gray-700 rounded">
+        <label className="block mb-2 text-2xl zain-bold">Time of Application</label>
+        <select value={am} onChange={handleAmChange} className="w-full p-2 bg-gray-700 rounded text-xl zain-regular">
           {arr.map((time) => (
             <option key={time} value={time}>{time}</option>
           ))}
@@ -44,7 +42,7 @@ const NewProduct = ({ addProduct, name, handleNameChange, type, handleTypeChange
         </select>
       </div>
       <div className="container py-5 px-5 mx-0 min-w-full flex flex-col items-center">
-        <button type="submit" className="w-50 p-2 bg-green-600 rounded">Add Product</button>
+        <button type="submit" className="w-50 p-2 bg-blue-600 rounded text-2xl zain-regular">Add Product</button>
       </div>
     </form>
   );

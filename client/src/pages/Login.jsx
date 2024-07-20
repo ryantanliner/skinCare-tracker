@@ -2,7 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import loginService from '../services/login';
-import routineService from '../services/routines'
+import routineService from '../services/routines';
+import Header1 from '../components/Header1'
+import '../App.css';
 
 function Login() {
   const navigate = useNavigate();
@@ -30,7 +32,7 @@ function Login() {
       navigate('/main')
     } catch (exception) {
       console.log('wrong')
-      setError('incorrect username/password')
+      setError('Incorrect username/password')
       setTimeout(() => {
         setError(null)
       }, 5000)
@@ -38,17 +40,14 @@ function Login() {
   }
   return (
 
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 ">
       <div className="bg-sky-200 p-8 rounded-lg shadow-lg max-w-md w-full">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">Welcome To SkincareTracker!</h2>
-          <p className="text-gray-600">Login</p>
-          <h3>{error}</h3>
-        </div>
+        <Header1 temp={"Login"}/>
+        <h3 className="text-3xl zain-extrabold text-red-800">{error}</h3>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm mb-2" htmlFor="username">
-              Username
+            <label className="block text-gray-700 text-xl mb-2 zain-regular" htmlFor="username">
+              Username:
             </label>
             <input
               type="text"
@@ -56,12 +55,12 @@ function Login() {
               name="username"
               value={username}
               onChange={({ target }) => setUsername(target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border text-xl zain-regular rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm mb-2" htmlFor="password">
-              Password
+            <label className="block text-gray-700 text-xl zain-regular mb-2" htmlFor="password">
+              Password:
             </label>
             <input
               type="password"
@@ -75,15 +74,15 @@ function Login() {
           <div className="mb-4">
             <button
               type="submit"
-              className="bg-black text-white py-2 px-4 rounded w-full hover:bg-gray-800"
+              className="bg-black text-white py-2 px-4 rounded w-full text-xl zain-regular hover:bg-gray-800"
             >
               Sign in
             </button>
           </div>
         </form>
         <div className="text-center">
-          <p className="text-sm text-gray-600">or</p>
-          <button onClick={navigateSignUp} className="bg-white text-black py-1 px-4 rounded w-full hover:bg-gray-800">Sign Up</button>
+          <p className="text-xl zain-regular text-gray-600">or</p>
+          <button onClick={navigateSignUp} className="bg-white text-xl zain-regular text-black py-1 px-4 rounded w-full hover:bg-gray-800">Sign Up</button>
         </div>
       </div>
     </div>

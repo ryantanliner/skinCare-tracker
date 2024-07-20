@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import usersService from '../services/users'
 import loginService from '../services/login'
 import routineService from '../services/routines'
-
+import Header1 from '../components/Header1'
 export default function Singup(){
   const [newUsername, setNewUsername] = useState('')
   const [newName, setNewName] = useState('')
@@ -41,14 +41,11 @@ export default function Singup(){
   return(
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-sky-200 p-8 rounded-lg shadow-lg max-w-md w-full">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">Welcome To SkincareTracker!</h2>
-          <p className="text-gray-600">Sign Up</p>
-        </div>
+        <Header1 temp={"Sign Up"}/>
         <form onSubmit={handleSignUp}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm mb-2" htmlFor="username">
-              Username
+            <label className="block text-gray-700 text-xl zain-regular mb-2" htmlFor="username">
+              Username:
             </label>
             <input
               type="text"
@@ -60,8 +57,8 @@ export default function Singup(){
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm mb-2" htmlFor="name">
-              Name
+            <label className="block text-gray-700 text-xl zain-regular mb-2" htmlFor="name">
+              Name:
             </label>
             <input
               type="text"
@@ -73,8 +70,8 @@ export default function Singup(){
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm mb-2" htmlFor="password">
-              Password
+            <label className="block text-gray-700 text-xl zain-regular mb-2" htmlFor="password">
+              Password:
             </label>
             <input
               type="password"
@@ -88,7 +85,7 @@ export default function Singup(){
           <div className="mb-4">
             <button
               type="submit"
-              className="bg-black text-white py-2 px-4 rounded w-full hover:bg-gray-800"
+              className="bg-black text-white text-2xl zain-bold py-2 px-4 rounded w-full hover:bg-gray-800"
             >
               Sign Up
             </button>
