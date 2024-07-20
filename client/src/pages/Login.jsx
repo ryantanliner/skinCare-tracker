@@ -10,7 +10,7 @@ function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  const navigateSingup = () => {
+  const navigateSignUp = () => {
     navigate('/signup')
   }
 
@@ -46,20 +46,26 @@ function Login() {
           <h3>{error}</h3>
         </div>
         <form onSubmit={handleLogin}>
-          <div className="mb-4 block text-gray-700 text-sm mb-2" htmlFor="username">
-            Username
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm mb-2" htmlFor="username">
+              Username
+            </label>
             <input
-              type="username"
+              type="text"
+              id="username"
               name="username"
               value={username}
               onChange={({ target }) => setUsername(target.value)}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
-          <div className="mb-4 block text-gray-700 text-sm mb-2" htmlFor="password">
-            Password
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm mb-2" htmlFor="password">
+              Password
+            </label>
             <input
-              type="text"
+              type="password"
+              id="password"
               name="password"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
@@ -77,7 +83,7 @@ function Login() {
         </form>
         <div className="text-center">
           <p className="text-sm text-gray-600">or</p>
-          <button onClick={navigateSingup}>Sign Up</button>
+          <button onClick={navigateSignUp} className="bg-white text-black py-1 px-4 rounded w-full hover:bg-gray-800">Sign Up</button>
         </div>
       </div>
     </div>
