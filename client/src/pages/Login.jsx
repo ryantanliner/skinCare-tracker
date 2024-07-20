@@ -10,7 +10,7 @@ function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  const handleSingUp = () => {
+  const navigateSingup = () => {
     navigate('/signup')
   }
 
@@ -77,10 +77,11 @@ function Login() {
         </form>
         <div className="text-center">
           <p className="text-sm text-gray-600">or</p>
-          <button>create an account</button>
+          <button onClick={navigateSingup}>Sign Up</button>
         </div>
       </div>
     </div>
+
   );
 }
 
