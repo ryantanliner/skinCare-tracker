@@ -3,7 +3,7 @@ import NewProduct from '../components/NewProduct';
 import ShowRoutine from '../components/ShowRoutine';
 import { useState, useEffect } from 'react';
 import routineService from '../services/routines';
-
+import Navbar from '../components/Navbar'
 const time = function (dur) {
   if (dur === "Both") {
     return null;
@@ -72,19 +72,7 @@ export default function Main() {
 
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
-      <div className="flex-none w-64 p-4 bg-gray-800 h-screen fixed">
-        <div className="text-center mb-8">
-          <img src="profile.jpg" alt="Profile" className="w-24 h-24 mx-auto rounded-full" />
-          <h2 className="mt-4 text-xl font-semibold">{loggedInUser.name}</h2>
-        </div>
-        <nav>
-          <ul>
-            <li className="mb-4"><a href="#" className="flex items-center px-4 py-2 rounded hover:bg-gray-700"><span>Tracker</span></a></li>
-            <li className="mb-4"><a href="#" className="flex items-center px-4 py-2 rounded hover:bg-gray-700"><span>Profile</span></a></li>
-            <li className="mb-4"><a href="/" className="flex items-center px-4 py-2 rounded hover:bg-gray-700" onClick={() => window.localStorage.removeItem('loggedUser')}><span>Log Out</span></a></li>
-          </ul>
-        </nav>
-      </div>
+      <Navbar loggedInUser={loggedInUser.username}/>
       <div className="flex-grow p-8 ml-64">
         <h1 className="text-3xl font-bold mb-8">Skincare Routine</h1>
         <NewProduct
