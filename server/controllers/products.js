@@ -1,4 +1,4 @@
-const routineRouter = require('express').Router()
+const productRouter = require('express').Router()
 const Product = require('../models/product')
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
@@ -11,12 +11,12 @@ const getTokenFrom = request => {
   return null
 }
 
-routineRouter.get('/', async (request, response) => {
+productRouter.get('/', async (request, response) => {
   const products = await Product.find({}).populate('user', {username: 1, name: 1})
   response.json(products)
 })
 
-routineRouter.post('/', async (request, response,) => {
+productRouter.post('/', async (request, response,) => {
   const body = request.body
 
   const decodedToken = jwt.verify(getTokenFrom(request), process.env.SECRET)
@@ -42,7 +42,7 @@ routineRouter.post('/', async (request, response,) => {
   response.status(201).json(savedProduct)
 })
 
-routineRouter.get('/:id', async (request, response,) => {
+productRouter.get('/:id', async (request, response,) => {
   const product = await Product.findById(request.params.id)
     
   if (product) {
@@ -52,9 +52,9 @@ routineRouter.get('/:id', async (request, response,) => {
   }
 })
 
-routineRouter.delete('/:id', async (request, response,) => {
+productRouter.delete('/:id', async (request, response,) => {
   await Product.findByIdAndDelete(request.params.id)
   response.status(204).end()
 })
 
-module.exports = routineRouter
+module.exports = productRouter
