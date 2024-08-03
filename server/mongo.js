@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 
 
-const url = `mongodb+srv://ryantanliner:a6CD7l4AuZx7Qb2C
-@products.elpmudf.mongodb.net/skincareRoutine?retryWrites=true&w=majority&appName=products`
 
 mongoose.set('strictQuery', false)
 
